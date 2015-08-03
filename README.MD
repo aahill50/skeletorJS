@@ -13,7 +13,7 @@ Now that you've got it working, use ```ctrl```+```c``` to kill the server and st
 
 TODO: Improve Readme :grin:
 ================
-* Explain how to use ```socketHandler.js``` (Rename file?)
+* Explain how to use ```clientEmitter.js```
 * Include example events and event handling
 * Decouple router from main ```app.js``` file to make code more modular
 * Decide what to do with templates

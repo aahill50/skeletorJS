@@ -1,4 +1,4 @@
-body, html, div {
+body, html, div, ul, li {
     margin: 0;
     padding: 0;
     border: 0;
@@ -6,4 +6,63 @@ body, html, div {
     text-decoration: inherit;
     background: inherit;
     font-family: sans-serif;
+}
+
+.group:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.box {
+    cursor: pointer;
+    margin: 0 auto;
+    width: 214px;
+    height: 214px;
+    list-style: none;
+    border: 5px solid black;
+    border-radius: 25%;
+    background: #ccc;
+}
+
+.thing {
+    border-radius: 50%  ;
+    width: 100px;
+    height: 60px;
+    border: 2px solid black;
+    float: left;
+    text-align: center;
+    padding-top: 40px;
+    vertical-align: baseline;
+    margin: 2px 0 0 2px;
+}
+
+.thing.red {
+    color: white;
+    background: red;
+}
+
+.thing.blue {
+    color: white;
+    background: blue;
+}
+
+.thing.green {
+    color: white;
+    background: green;
+}
+
+.thing.purple {
+    color: white;
+    background: purple;
+}
+
+.thing:hover {
+    color: black;
+    background: gold;
+}
+
+.thing {
+    -webkit-transition: color 100ms, background 100ms;
+    transition: color 100ms, background 100ms;
 }
