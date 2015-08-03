@@ -1,0 +1,16 @@
+{
+  "name": "skeletorJS",
+  "version": "0.0.1",
+  "description": "A barebones Node app that uses Express and socket.io",
+  "main": "lib/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node lib/app.js"
+  },
+  "author": "Aaron Hill <aahill50@gmail.com> (https://github.com/aahill50)",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.13.3",
+    "socket.io": "^1.3.6"
+  }
+}
