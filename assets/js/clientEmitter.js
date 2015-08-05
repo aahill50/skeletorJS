@@ -1,41 +1,55 @@
 var socket = io();
 
 $(function () {
-    $('.box').on('click', function (e) {
-        var $things = $(e.currentTarget).find('.thing');
-        var origClasses = [];
-
+    $('#messageInput').on('submit', function (e) {
+        var $input = $(this).find('input');
+        var msg = $input.val();
         e.preventDefault();
 
-        $things.each(function (i, thing) {
-            origClasses.push($(thing).attr('class'));
-        });
+        if (msg) {
+            socket.emit('new message', msg);
+            $input.val('');
+        }
+    });
 
-        origClasses.shuffle();
-        socket.emit('thingShuffle', origClasses);
+    socket.on('get all users', function (userlist) {
+        var users = Object.keys(userlist);
 
-        $things.each(function (i, thing) {
-            $(thing).removeClass();
-            $(thing).addClass(origClasses.shift())
+        users.forEach(function (user) {
+            addUserToList(userlist[user].username);
         })
-    })
-});
+    });
 
+    socket.on('add user', function (user) {
+        addUserToList(user);
+    });
 
-Array.prototype.shuffle = function () {
-    var counter = this.length, temp, index;
+    socket.on('remove user', function (user) {
+        console.log('removing %s', user);
+        removeUserFromList(user);
+    });
 
-    // While there are elements in the array
-    while (counter > 0) {
-        // Pick a random index
-        index = Math.floor(Math.random() * counter);
+    socket.on('add message', function (username, message) {
+        var $messageList = $('#messageList');
+        var $message = $('<span>');
+        $message.addClass('message');
+        $message.text(username + ': ' + message);
+        $messageList.append($message);
 
-        // Decrease counter by 1
-        counter--;
+        $messageList.scrollTop($messageList[0].scrollHeight);
 
-        // And swap the last element with it
-        temp = this[counter];
-        this[counter] = this[index];
-        this[index] = temp;
+    });
+
+    function addUserToList(username) {
+        var $userlist = $('.userlist');
+        var $li = $('<li>');
+        $li.addClass('username');
+        $li.text(username);
+        $userlist.append($li)
     }
-};
+
+    function removeUserFromList(username) {
+        var $li = $('li.username:contains("' + username + '")');
+        $li.remove();
+    }
+});

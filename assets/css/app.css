@@ -1,4 +1,4 @@
-body, html, div, ul, li {
+body, html, main, div, ul, li, form, input {
     margin: 0;
     padding: 0;
     border: 0;
@@ -6,6 +6,7 @@ body, html, div, ul, li {
     text-decoration: inherit;
     background: inherit;
     font-family: sans-serif;
+    list-style: inherit;
 }
 
 .group:after {
@@ -14,55 +15,71 @@ body, html, div, ul, li {
     clear: both;
 }
 
-.box {
-    cursor: pointer;
-    margin: 0 auto;
-    width: 214px;
-    height: 214px;
+#chatContainer {
+    border: 2px solid #777;
+    margin: 100px auto;
+    width: 50%;
+    position: relative;
+}
+
+#messageInput {
+    width: 100%;
+    border-top: 2px solid #777;
+}
+
+#messageInput input {
+    width: 100%;
+}
+
+#userListContainer {
+    width: 20%;
+    float: right;
     list-style: none;
-    border: 5px solid black;
-    border-radius: 25%;
-    background: #ccc;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-.thing {
-    border-radius: 50%  ;
-    width: 100px;
-    height: 60px;
-    border: 2px solid black;
-    float: left;
+#userListTitle {
+    border-bottom: 2px solid black;
     text-align: center;
-    padding-top: 40px;
-    vertical-align: baseline;
-    margin: 2px 0 0 2px;
 }
 
-.thing.red {
-    color: white;
-    background: red;
+.username {
+    padding: 5px;
 }
 
-.thing.blue {
-    color: white;
-    background: blue;
+#messageContainer {
+    width: 80%;
+    height: 400px;
+    background: #ccc;
+    border-right: 2px solid #777;
+    position: relative;
 }
 
-.thing.green {
-    color: white;
-    background: green;
+#messageList {
+    overflow: auto;
+    position:   absolute;
+    width: 100%;
+    max-height: 400px;
+    float: left;
+    bottom: 0;
+    left: 0;
 }
 
-.thing.purple {
-    color: white;
-    background: purple;
+.message {
+    overflow:   auto;
+    display: block;
+    max-height: 400px;
+    padding: 4px;
 }
 
-.thing:hover {
-    color: black;
-    background: gold;
+.message:nth-child(odd) {
+    background: #ccc;
+    color: #444;
 }
 
-.thing {
-    -webkit-transition: color 100ms, background 100ms;
-    transition: color 100ms, background 100ms;
+.message:nth-child(even) {
+    background: #444;
+    color: #ccc;
 }
