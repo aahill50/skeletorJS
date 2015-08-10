@@ -13,4 +13,5 @@ Now that you've got it working, use ```ctrl```+```c``` to kill the server and st
 
 TODO: Improve Readme :grin:
 ================
+* Create actual installer to create basic scaffold instead of having to clone project
 * Decouple router from main ```app.js``` file to make code more modular
