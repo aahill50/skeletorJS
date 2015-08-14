@@ -11,7 +11,6 @@ Go to ```localhost:3334``` to make sure the page loads
 Now that you've got it working, use ```ctrl```+```c``` to kill the server and start creating!
 
 
-TODO: Improve Readme :grin:
+TODO: Improve Readme :grinning:
 ================
 * Create actual installer to create basic scaffold instead of having to clone project
-* Decouple router from main ```app.js``` file to make code more modular
