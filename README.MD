@@ -13,4 +13,4 @@ Now that you've got it working, use ```ctrl```+```c``` to kill the server and st
 
 TODO: Improve Readme :grinning:
 ================
-* Create actual installer to create basic scaffold instead of having to clone project
+*

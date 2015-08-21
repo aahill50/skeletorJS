@@ -1,4 +1,4 @@
-body, html, main, div, ul, li, form, input {
+body, html, main, div {
     margin: 0;
     padding: 0;
     border: 0;
@@ -15,71 +15,7 @@ body, html, main, div, ul, li, form, input {
     clear: both;
 }
 
-#chatContainer {
-    border: 2px solid #777;
-    margin: 100px auto;
-    width: 50%;
-    position: relative;
-}
-
-#messageInput {
+#info p {
+    background: grey;
     width: 100%;
-    border-top: 2px solid #777;
-}
-
-#messageInput input {
-    width: 100%;
-}
-
-#userListContainer {
-    width: 20%;
-    float: right;
-    list-style: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-#userListTitle {
-    border-bottom: 2px solid black;
-    text-align: center;
-}
-
-.username {
-    padding: 5px;
-}
-
-#messageContainer {
-    width: 80%;
-    height: 400px;
-    background: #ccc;
-    border-right: 2px solid #777;
-    position: relative;
-}
-
-#messageList {
-    overflow: auto;
-    position:   absolute;
-    width: 100%;
-    max-height: 400px;
-    float: left;
-    bottom: 0;
-    left: 0;
-}
-
-.message {
-    overflow:   auto;
-    display: block;
-    max-height: 400px;
-    padding: 4px;
-}
-
-.message:nth-child(odd) {
-    background: #ccc;
-    color: #444;
-}
-
-.message:nth-child(even) {
-    background: #444;
-    color: #ccc;
 }

@@ -1,20 +1,23 @@
 {
   "name": "skeletorJS",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "bin": {
-    "skel": "lib/genSkel.js"
+    "skeletor": "lib/genSkel.js"
   },
   "description": "A barebones Node app that uses Express and socket.io",
   "main": "lib/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node lib/app.js"
+    "start": "node lib/app.js",
+    "start_example": "node lib/app_example.js"
   },
   "author": "Aaron Hill <aahill50@gmail.com> (https://github.com/aahill50)",
   "license": "ISC",
   "devDependencies": {
     "express": "^4.13.3",
     "jade": "^1.11.0",
+    "lodash.filter": "^3.1.1",
+    "lodash.reject": "^3.1.1",
     "q": "^1.4.1",
     "socket.io": "^1.3.6"
   },
